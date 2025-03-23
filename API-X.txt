@@ -1,0 +1,59 @@
+Keys and tokens X naudadamda:
+API Key: RP4QhXAgDbvrSR4jLZaZqyWKo
+API Key Secret: PLwsOB2Nq7OQyQPC0Egkw4Ifq3AP3nK9xfcVPLdiNWyOxf7pa6
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAGJ50AEAAAAAX7CJamqZcFyMgXYk2UZi1Oz67Jw%3D2Cp2kU7vMki05m7UjQ9jYCSeOUam8QYUisguoR82lxx2ScGJpn
+
+Access Token: 867480512163598337-BN4KglNEwoJSlpW5qEGM8dP3eL9XsLp
+Access Token Secret: NfXjsW7wxKyfJFPalwHXp6RQ84zUqcDeHwOIjYcpLECbL
+
+Here is your OAuth 2.0 Client ID and Client Secret
+Client ID: Vk1DbWR0eTFkRFNHYnlQQnlTMFg6MTpjaQ
+Client Secret: QVEpfeXRruF32w-YVY3dJJiGF03qo3A4A6UiKiScPcBU1oZRLJ
+----------------------------------------------------------------------------
+Keys and tokens X anhhaohoa16:
+API Key: AkoyDdefOWEByTSLUfiovsexJ
+API Key Secret: fa4KadtSunNhGNFoDLPY60SdUM2Y9rEzdunHPU5Kd6mcubYnXs
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAKZ50AEAAAAAgHhcKqR3D3NvEERniok2OZjPKb4%3DxADtxdqrmrWJ6Vk9Gk5aXTRqZdEkmfmDYiA7Wl2S3qefMlWQ9Q
+
+Access Token: 710016036-ROGUtnAApx1tfqcY9RJnGiGuEc0IRVGxVCRv5gq7
+Access Token Secret: XJ9eTuPS3A8Te2oJxe6NdqDzwEaP3c2iqXU5kTxONb67l
+
+Here is your OAuth 2.0 Client ID and Client Secret
+Client ID: eV9TS0tZZG1oWUw0MlR1SDJGemI6MTpjaQ
+Client Secret: -LzbzI1GyP0B4A3MXz3xOyR6X2B9pdXPC8xglvx1zlk-cvCoqM
+----------------------------------------------------------------------------
+Keys and tokens X ngothiloan286:
+API Key: Kcyn7TZDIFvNtjsaB9GOFPSok
+API Key Secret: jyJoblGE4fSOFsvxUtF7QvHJHGSU0K2OHgScxzke6pJrQu0NJj
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAKd50AEAAAAABHIHm2jIukL307vrvf%2BHOb02zts%3DTeHAhS98YO08pTojNF5wZzqD14VLVzLswZ70OqP2AyksEZfauK
+
+Access Token: 1543507394-y7XBm6CO1ptUxatOHGDvsmfVASCKQKjnbG8Pwbg
+Access Token Secret: gDKw1MK3E0of7tS0RVQiqALoyollBrOcNXiYYhVJQ0Lcv
+
+Here is your OAuth 2.0 Client ID and Client Secret
+Client ID: am9KN1NHMXpHNkZMUm05czFheGU6MTpjaQ
+Client Secret: yxTATQShpz0SmWNROVy25Njfbdx7wsLs3seNPywr5Cv01NJQp_
+----------------------------------------------------------------------------
+Keys and tokens X anhhaohoa17:
+API Key: GJxtK9dFVVSpIyAbBb7JFg1jg
+API Key Secret: U7MFJT1cJhyA1jot6RzSdJeCQSlruhjSil7z8kYI8t7k9TBZsM
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAKl50AEAAAAAExxw5GgTU1WOnNKLgSKu66dl0Ko%3DrW8P5OSiEO04N17OHoi5GsTiyBecL3pqScQvkizWmIYWkh19VL
+
+Access Token: 1896916826661289984-ATnjS44ji0SivHn5fWRYWrnpi3a9OY
+Access Token Secret: 1896916826661289984-ATnjS44ji0SivHn5fWRYWrnpi3a9OY
+
+Here is your OAuth 2.0 Client ID and Client Secret
+Client ID: elZTbjVkWDJzWjktcUpjTlppTE06MTpjaQ
+Client Secret: -Xjgaa1yrW_PtRJU4hF7IhC8zvUNw9c7_eSkUrXEZg-fwwDkIU
+----------------------------------------------------------------------------
+Keys and tokens X topmo_p89:
+API Key: 5OWA5mFZTnyr0Jmq5JUSIDm9w
+API Key Secret: tlgxKLHdMXK1tzv2unzhkKHQjGvWVX58XHWwT0dxVapYYvIvyg
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAKp50AEAAAAAr9kDPJ9%2FdW0XijYGgi7ux78CL7I%3Dkzo5tFz8YodtvLepApY1rROLMw7TILdktvwnufmP8j5d5vkFs8
+
+Access Token: 1676482236055719937-BH4HvjudZDT0hPWFT2AlegBbOygcrk
+Access Token Secret: dMP4tB90Q6ldw6114ncJHPkDr7i9QgPAmeNoIcVq2x8W8
+
+Here is your OAuth 2.0 Client ID and Client Secret
+Client ID: SlhhOHZnbjJDcmh4cW16bHFzVTQ6MTpjaQ
+Client Secret: Y_vW4AY0PeUmU1lxjNjfidXaxxIHfo6A5iGhMKBBF6KzO2hykt
