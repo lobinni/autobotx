@@ -84,12 +84,14 @@ def interact_with_tweets(api, client, account_number):
 while True:
     for i, account in enumerate(ACCOUNTS):
         try:
-            auth = tweepy.OAuth1UserHandler(
-                account["API_KEY"], account["API_SECRET"],
-                account["ACCESS_TOKEN"], account["ACCESS_SECRET"]
+            auth = tweepy.OAuth2UserHandler(
+                client_id=account["API_KEY"],
+                client_secret=account["API_SECRET"],
+                access_token=account["ACCESS_TOKEN"],
+                access_token_secret=account["ACCESS_SECRET"]
             )
-            api = tweepy.API(auth, wait_on_rate_limit=True)
             client = tweepy.Client(
+                bearer_token=os.getenv("BEARER_TOKEN"),
                 consumer_key=account["API_KEY"],
                 consumer_secret=account["API_SECRET"],
                 access_token=account["ACCESS_TOKEN"],
