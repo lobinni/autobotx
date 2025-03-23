@@ -90,7 +90,7 @@ while True:
         api = tweepy.API(auth, wait_on_rate_limit=True)
 
         # Lấy ID của tài khoản mục tiêu
-        target_user = api.get_user(screen_name=TARGET_USERNAME)
+        target_user = client.get_user(screen_name=TARGET_USERNAME)
         target_user_id = target_user.id
 
         # Chạy bot cho từng tài khoản
