@@ -5,10 +5,10 @@ import time
 import random
 from dotenv import load_dotenv
 
-# Load API keys from .env
+# Load environment variables
 load_dotenv()
 
-# List of bot accounts
+# List of Twitter accounts
 ACCOUNTS = []
 for i in range(1, 6):  # 5 accounts
     ACCOUNTS.append({
@@ -18,51 +18,52 @@ for i in range(1, 6):  # 5 accounts
         "ACCESS_SECRET": os.getenv(f"ACCESS_SECRET_{i}"),
     })
 
-# Target Twitter User ID
+# Target Twitter account ID
 TARGET_USER_ID = os.getenv("TARGET_USER_ID")
 
-# Initialize OpenAI API
+# OpenAI API setup
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# Generate AI-based replies using GPT-4
 def generate_reply(tweet_text):
+    """Generate AI-based reply using GPT-4."""
     try:
         response = openai.ChatCompletion.create(
             model="gpt-4",
-            messages=[{"role": "system", "content": "You are a smart and humorous Twitter chatbot."},
-                      {"role": "user", "content": tweet_text}]
+            messages=[
+                {"role": "system", "content": "You are a smart and witty Twitter chatbot."},
+                {"role": "user", "content": tweet_text}
+            ]
         )
         return response["choices"][0]["message"]["content"]
     except Exception as e:
         print(f"⚠️ AI Error: {e}")
-        return "I can't reply right now. Try again later!"
+        return "I can't respond right now, please try again later!"
 
-# Function to interact with tweets
-def interact_with_tweets(api, client, account_number):
+def interact_with_tweets(api, account_number):
+    """Fetch and interact with target user's tweets."""
     try:
         print(f"✅ Fetching tweets from target account ID: {TARGET_USER_ID}")
-
-        # Retrieve recent tweets from the target account
-        tweets = client.get_users_tweets(id=TARGET_USER_ID, max_results=5, tweet_fields=["id", "text"])
-        if not tweets or not tweets.data:
-            print(f"❌ No tweets found for account ID {TARGET_USER_ID}")
+        tweets = api.user_timeline(user_id=TARGET_USER_ID, count=5, tweet_mode="extended")
+        
+        if not tweets:
+            print(f"❌ No tweets found for target user ID: {TARGET_USER_ID}")
             return
 
-        for tweet in tweets.data:
+        for tweet in tweets:
             tweet_id = tweet.id
-            tweet_text = tweet.text
+            tweet_text = tweet.full_text
             print(f"🟢 [Account {account_number}] Processing Tweet {tweet_id}: {tweet_text}")
-
+            
             # Like Tweet
             try:
-                client.like(tweet_id)
+                api.create_favorite(tweet_id)
                 print(f"✅ [Account {account_number}] Liked Tweet {tweet_id}")
             except Exception as e:
                 print(f"⚠️ [Account {account_number}] Like Error: {e}")
 
-            # Retweet Tweet
+            # Retweet
             try:
-                client.retweet(tweet_id)
+                api.retweet(tweet_id)
                 print(f"🔁 [Account {account_number}] Retweeted Tweet {tweet_id}")
             except Exception as e:
                 print(f"⚠️ [Account {account_number}] Retweet Error: {e}")
@@ -70,37 +71,27 @@ def interact_with_tweets(api, client, account_number):
             # Reply with AI-generated message
             try:
                 reply_text = generate_reply(tweet_text)
-                api.update_status(f"@{TARGET_USER_ID} {reply_text}", in_reply_to_status_id=tweet_id)
+                api.update_status(f"@{tweet.user.screen_name} {reply_text}", in_reply_to_status_id=tweet_id)
                 print(f"💬 [Account {account_number}] Replied: {reply_text}")
             except Exception as e:
                 print(f"⚠️ [Account {account_number}] Reply Error: {e}")
-
+            
             time.sleep(random.randint(15, 45))  # Random delay to avoid spam
 
     except Exception as e:
         print(f"⚠️ Error processing target account: {e}")
 
-# Run the bot for all accounts
+# Run bot for all accounts
 while True:
     for i, account in enumerate(ACCOUNTS):
         try:
-            auth = tweepy.OAuth1UserHandler(
-                account["API_KEY"], account["API_SECRET"],
-                account["ACCESS_TOKEN"], account["ACCESS_SECRET"]
-            )
+            auth = tweepy.OAuthHandler(account["API_KEY"], account["API_SECRET"])
+            auth.set_access_token(account["ACCESS_TOKEN"], account["ACCESS_SECRET"])
             api = tweepy.API(auth, wait_on_rate_limit=True)
-            client = tweepy.Client(
-                consumer_key=account["API_KEY"],
-                consumer_secret=account["API_SECRET"],
-                access_token=account["ACCESS_TOKEN"],
-                access_token_secret=account["ACCESS_SECRET"]
-            )
-
             print(f"🚀 Running bot for account {i+1}...")
-            interact_with_tweets(api, client, i + 1)
-
+            interact_with_tweets(api, i + 1)
         except Exception as e:
             print(f"⚠️ Error running bot for account {i+1}: {e}")
-
+    
     print("⏳ Waiting 5 minutes before running again...")
-    time.sleep(300)  # 5 minutes
+    time.sleep(300)  # Wait 5 minutes before the next run
