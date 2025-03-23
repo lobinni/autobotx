@@ -87,7 +87,7 @@ while True:
             account["API_KEY"], account["API_SECRET"],
             account["ACCESS_TOKEN"], account["ACCESS_SECRET"]
         )
-        api = tweepy.API(auth, wait_on_rate_limit=True)
+        client = tweepy.client(auth, wait_on_rate_limit=True)
 
         # Lấy ID của tài khoản mục tiêu
         target_user = client.get_user(screen_name=TARGET_USERNAME)
